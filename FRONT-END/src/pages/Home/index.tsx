@@ -2,13 +2,14 @@ import React from 'react';
 import {FiSearch} from 'react-icons/fi'
 import {Link} from 'react-router-dom';
 import Blog from '../Blog';
-import {Container, Container_search,Input, Container_menu} from './styles';
+import {Container, Container_search,Input,AnimationContainer,Content,Container_menu} from './styles';
 import illustration from '../../assets/Illustration.svg';
 
 const Home: React.FC = () =>{
   return(
       <Container>
-
+        <Content>
+        <AnimationContainer>
         <h1>Healthy Food</h1>
           <img src={illustration} alt=""/>
           <Container_search>
@@ -31,9 +32,11 @@ const Home: React.FC = () =>{
             <Link to="/join">
             <h1 className="item3">JOIN</h1>
             </Link>
+
             <button>REGISTER</button>
           </Container_menu>
-
+          </AnimationContainer>
+        </Content>
       </Container>
   );
 }
