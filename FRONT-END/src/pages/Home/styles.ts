@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import styled,{keyframes} from 'styled-components';
 import px2vw from '../../utils/px2vw';
+import { shade } from 'polished';
 export const Container = styled.div`
 :root {
       font-size: ${px2vw(24)} ;
@@ -19,11 +20,8 @@ width: 1600px;
 height:743.3px;
 h1{
 position: absolute;
-width: 226px;
-height: 43px;
-margin-left: 260px;
-margin-top: 28px;
-
+margin-left: 35px;
+margin-top: -640px;
 font-weight: bold;
 font-size: 32px;
 line-height: 39px;
@@ -32,15 +30,42 @@ color: #BADC58;
 }
 img{
 
-  margin-left: 728px;
   width:872px;
   height:743.3px;
-  margin-top:0;
+  margin-top:0px;
+  margin-left: 1627px;
 
   svg {
     border:1px solid;
 }
 }
+`;
+export const Content = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 100%;
+  max-width: 700px;
+`;
+const appearFromLeft = keyframes`
+from {
+opacity: 0;
+transform: translateX(-50px);
+}
+to{
+  opacity: 1;
+transform: translateX(0);
+}
+`;
+
+export const AnimationContainer = styled.div`
+display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  animation: ${appearFromLeft} 1s;
 `;
 export const Container_search = styled.div`
 position: absolute;
@@ -53,6 +78,7 @@ h1{
 width: 328px;
 height: 200px;
 margin-left: 133px;
+margin-top:10px;
 font-weight: bold;
 font-size: 48px;
 line-height: 59px;
@@ -83,10 +109,10 @@ button{
   height: 52px;
   left: 493px;
   top: 250px;
-  background: #BADC58;
+  background-color: #BADC58;
   border-radius: 5px;
   border-style: none;
-  transition: color 0.2s;
+  transition: color 1s;
 
   &:hover{
     background-color: #B5D657;
@@ -114,16 +140,12 @@ color: #9E9BAF;
 
 export const Container_menu = styled.div`
 display:flex;
-width: 1366px;
-height: 103px;
-left: -4px;
-top: 0px;
 
 .item1{
 width: 170px;
 height: 21px;
-margin-left: -590px;
-margin-top: 40px;
+margin-left: 590px;
+margin-top: -700px;
 
 font-style: normal;
 font-weight: bold;
@@ -131,14 +153,18 @@ font-size: 16px;
 line-height: 20px;
 
 color: #fff;
+transition: color 0.2s;
 
+  &:hover{
+    color: #C1E360;
+  }
 }
 
 .item2{
 width: 170px;
 height: 21px;
-margin-left: -400px;
-margin-top: 40px;
+margin-left: 800px;
+margin-top: -700px;
 
 font-style: normal;
 font-weight: bold;
@@ -146,36 +172,47 @@ font-size: 16px;
 line-height: 20px;
 
 color: #fff;
+
+transition: color 0.2s;
+
+  &:hover{
+    color: #C1E360;
+  }
 
 }
 
 .item3{
-width: 170px;
-height: 21px;
-margin-left: -320px;
-margin-top: 40px;
+  width: 170px;
+  height: 21px;
+  margin-left: 910px;
+  margin-top: -700px;
 
-font-style: normal;
-font-weight: bold;
-font-size: 16px;
-line-height: 20px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
 
-color: #fff;
+  color: #fff;
 
+  transition: color 0.2s;
 
-
+  &:hover{
+    color: #C1E360;
+  }
 }
+
 button{
+position: absolute;
 width: 130px;
 height: 52px;
-margin-left: -250px;
-margin-top:25px;
+left: 1345px;
+top:25px;
 border-style:none;
 background: #FFFFFF;
 border-radius: 5px;
 color:#BADC58;
 
-transition-duration: 0.2s;
+transition: color 0.5s;
 
 &:hover{
   background-color: #B5D657;
@@ -184,4 +221,5 @@ transition-duration: 0.2s;
 
 }
 `;
+
 
